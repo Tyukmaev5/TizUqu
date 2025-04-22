@@ -1,16 +1,26 @@
-# tizuqu
+# TizUqu
 
-A new Flutter project.
+**TizUqu** — мобильное Flutter-приложение для скорочтения, основанное на принципе отображения слов по одному, с заданной скоростью. Название происходит от татарского слова "тиз уку", что означает "быстрое чтение".
 
-## Getting Started
+## Особенности
 
-This project is a starting point for a Flutter application.
+- **Ввод текста** и поочерёдное отображение слов на отдельном экране
+- **Настройки отображения**:
+  - Скорость показа (мс или WPM)
+  - Размер шрифта
+  - Тема (светлая / тёмная / кастомная)
+  - Тип шрифта (обычный / моноширинный)
+- Архитектура: **BLoC + Clean Architecture**
+- Поддержка локального хранения настроек (`SharedPreferences`)
 
-A few resources to get you started if this is your first Flutter project:
+## Скриншоты
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> *Добавь сюда скриншоты приложения, если хочешь*
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Установка и запуск
+
+1. Клонируй репозиторий:
+
+   ```bash
+   git clone https://github.com/твой-ник/tizuqu.git
+   cd tizuqu
