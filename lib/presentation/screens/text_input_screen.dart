@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tizuqu/presentation/screens.dart'; 
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tizuqu/presentation/bloc/show_words/show_words_cubit.dart';
+import 'package:tizuqu/presentation/screens.dart';
 
 class TextInputScreen extends StatefulWidget {
   const TextInputScreen({super.key});
@@ -14,10 +16,16 @@ class _TextInputScreenState extends State<TextInputScreen> {
   void _startReading() {
     final text = _controller.text.trim();
     if (text.isNotEmpty) {
+      // Допустим, скорость пока фиксированная (500 мс)
+      const speed = Duration(milliseconds: 500);
+
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => ShowWordsScreen(text: text),
+          builder: (_) => BlocProvider(
+            create: (_) => ShowWordsCubit(text: text, speed: speed),
+            child: const ShowWordsScreen(),
+          ),
         ),
       );
     }
