@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tizuqu/presentation/bloc/bloc_settings.dart';
 import 'package:tizuqu/presentation/bloc/show_words/show_words_cubit.dart';
 import 'package:tizuqu/presentation/screens.dart';
 
@@ -16,8 +17,8 @@ class _TextInputScreenState extends State<TextInputScreen> {
   void _startReading() {
     final text = _controller.text.trim();
     if (text.isNotEmpty) {
-      // Допустим, скорость пока фиксированная (500 мс)
-      const speed = Duration(milliseconds: 500);
+      final settings = context.read<SettingsBloc>().state;
+      final speed = Duration(milliseconds: settings.speedMs);
 
       Navigator.push(
         context,

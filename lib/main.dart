@@ -29,7 +29,8 @@ class TizUquApp extends StatelessWidget {
             theme: ThemeData.light(),
             darkTheme: ThemeData.dark(),
             home: const MainScreen(),
-          );
+            debugShowCheckedModeBanner: false,
+          ); 
         },
       ),
     );
